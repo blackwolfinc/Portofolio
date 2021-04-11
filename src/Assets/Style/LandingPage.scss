@@ -1,0 +1,300 @@
+.hide {
+  display: none !important;
+}
+
+.LandingPage {
+  display: flex;
+  flex-direction: column;
+  height: 50rem;
+  background-color: aqua;
+  width: 100%;
+  background: url(../img/back3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  z-index: -1;
+
+  .LandingPagelayer {
+    background: linear-gradient(36deg,
+        rgb(12, 11, 5) 0%,
+        rgba(0, 0, 0, 0.6516981792717087) 63%);
+    width: 100%;
+    height: 50rem;
+    opacity: 0.7;
+    position: absolute;
+    z-index: 0;
+  }
+
+  .ContainerDefault {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50rem;
+
+    .ContainerKiri {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      // background-color: aqua;
+      margin: 3rem 0rem 2rem 4rem;
+
+      .Btn-hire {
+        height: 5rem;
+        top: 0px;
+        position: relative;
+        margin-top: -4rem;
+        z-index: 999999;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border: none;
+        background: linear-gradient(36deg, rgba(80, 80, 80, 0.8645833333333334) 61%, #548eb4);
+        color: #fff;
+        outline: none;
+      }
+
+      .Btn-hire:hover {
+        transform: scale(1.3);
+      }
+
+      .CardProfil {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+        flex-direction: column;
+        background: linear-gradient(36deg,
+            rgba(80, 80, 80, 1) 25%,
+            rgba(0, 0, 0, 0.8729866946778712) 85%);
+        height: 90%;
+        width: 20rem;
+        border-radius: 30px;
+        opacity: 0.8;
+        box-shadow: 20px 20px 60px #444444, -20px -20px 60px #5c5c5c;
+        z-index: 999999;
+
+        img {
+          transform: scale(1.6) translateY(-2.5rem);
+          top: -5rem;
+          filter: grayscale(20%);
+
+        }
+
+        img:hover {
+          transform: rotateY(180deg) scale(1.6) translateY(-2.5rem);
+        }
+      }
+
+      .CardProfil:hover {}
+    }
+
+    .ContainerKanan {
+      display: flex;
+      justify-content: left;
+      flex-direction: column;
+      flex-grow: 2;
+      background: linear-gradient(36deg,
+          rgba(80, 80, 80, 0.712) 25%,
+          rgba(0, 0, 0, 0.692) 85%);
+      margin: 3rem 2rem 2rem 2rem;
+      border-radius: 20px;
+      border: 5px solid gray;
+      padding: 2rem;
+      color: #fff;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+    .SocialWraper{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+     border-radius: 20px;
+     padding: 1rem;
+      border: 4px solid gray ;
+      margin-top: 3rem;
+      z-index: 88;
+    }
+    
+    }
+  }
+}
+
+// Animation Bergerak kiri
+.CardProfil {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  width: 200px;
+  background-color: #111111;
+  color: #333333;
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+.CardProfil .line {
+  position: absolute;
+  background-color: #548eb4;
+  box-shadow: 0px 0px 12px #548eb4;
+  width: 4px;
+  height: calc(100% - 80px);
+  top: 30px;
+  left: 0px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.CardProfil.two .line {
+  border-radius: 0;
+  width: 2px;
+}
+
+.CardProfil .line .scanner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(36deg,
+      rgba(80, 80, 80, 1) 25%,
+      rgba(29, 28, 28, 0.873) 85%);
+  width: 100%;
+  height: 60px;
+  animation: scanner-loop 9s ease-in-out infinite;
+}
+
+.CardProfil.two .line .scanner {
+  background: linear-gradient(rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0));
+  height: 50%;
+}
+
+@keyframes scanner-loop {
+  0% {
+    top: 0;
+  }
+
+  50% {
+    top: 100%;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+// hero 
+
+.diagonal-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background: #2b5876;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #1a242bc7, rgba(80, 80, 80, 1));
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #1a242bc7, rgba(80, 80, 80, 1));
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  z-index: -1;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+}
+
+// creates randomized star sizes
+@function stars($n) {
+  $value: '#{random(2000)}px #{random(2000)}px #767676';
+
+  @for $i from 2 through $n {
+    $value: '#{$value} , #{random(2000)}px #{random(2000)}px #767676';
+  }
+
+  @return unquote($value);
+}
+
+// store random stars
+$stars-small: stars(700);
+$stars-medium: stars(200);
+$stars-big: stars(100);
+
+
+.stars {
+  z-index: -1;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: -webkit-fill-available;
+  transition: opacity 1s ease-in-out;
+
+  h1 {
+    margin-top: 2.5rem;
+    color: rgba(255, 255, 255, 0.842);
+  }
+}
+
+.stars>.small {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: $stars-small;
+  animation: starsAnimation 50s linear infinite;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: $stars-small;
+  }
+}
+
+.stars>.medium {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: $stars-medium;
+  animation: starsAnimation 100s linear infinite;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: $stars-medium;
+  }
+}
+
+.stars>.big {
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: $stars-big;
+  border-radius: 100%;
+  animation: starsAnimation 150s linear infinite;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: $stars-big;
+    border-radius: 100%;
+  }
+}
+
+// swap from/to values to reverse animation
+@keyframes starsAnimation {
+  from {
+    transform: translateY(-2000px);
+  }
+
+  to {
+    transform: translateY(0px);
+  }
+}

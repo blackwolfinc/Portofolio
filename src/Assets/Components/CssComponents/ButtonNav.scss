@@ -1,0 +1,31 @@
+.ButonNav {
+    display: flex;
+    flex-direction: column;
+    // background-color: aqua;
+    button{
+        padding: 0.6rem;
+        margin: 0.5rem 0rem;
+        z-index: 55;
+        background: linear-gradient(36deg,
+        rgba(80, 80, 80, 0.356) 05%,
+        rgba(0, 0, 0, 0.692) 85%);
+        color: rgb(175, 175, 175);
+        border-radius: 5px;
+        outline: none;
+        text-align: start;
+
+        
+    }
+    :hover{
+        transform: scale(1.1) translateY(-0.2rem);
+        border: 2px solid rgba(128, 128, 128, 0.637);
+        
+
+    }
+
+    :active {
+
+        border: 2px coral solid;
+    }
+
+}
